@@ -1,0 +1,15 @@
+{% extends 'plantillas/principal.twig' %}
+
+{% block content %}
+
+    <h1></h1>
+    <div class="jumbotron">
+        <h1 class="display-4">{{ profesor.nombre }}</h1>
+        <p class="lead">
+            <h3 class="card-title">email: {{ profesor.email }}</h3>
+            <h4 class="card-title">usuario: {{ profesor.usuario }}</h4>
+        </p>
+        <a class="btn btn-primary btn-lg" href="/profesores" role="button">Volver a la página anterior</a>
+    </div>
+
+{% endblock %}

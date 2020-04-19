@@ -1,0 +1,19 @@
+{% extends 'plantillas/principal.twig' %}
+
+{% block content %}
+
+    <h1>Listado de Artículos.</h1>
+
+    {% for articulo in articulos %}
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ articulo.url }}">{{ articulo.titulo }}</a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ articulo.descripcion }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+    <a class="btn btn-primary btn-lg" href="/" role="button">Volver a la página principal</a>
+
+{% endblock %}

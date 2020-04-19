@@ -1,0 +1,65 @@
+{% extends 'plantillas/principal.twig' %}
+
+{% block content %}
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <th class="text-center">Asignación de Contraseñas a Profesores</th>
+    </tr>
+</thead>
+</table>
+<button class="btn btn-info" onClick="location.href='/'"><i class="fa fa-arrow-left"></i></button>
+<button class="btn btn-success" onClick="actuChecks('chkprofesores')"><i class="fa fa-graduation-cap"></i></button>
+<button class="btn btn-danger" onClick="mensajes()"><i class="fa fa-envelope"></i></button>
+<button class="btn btn-danger" onClick="informes()"><i class="fa fa-newspaper"></i></button>
+<form action=>
+    <div class="checkbox">
+        <label>
+            <input id="correo" name="correo" type="checkbox" value="" checked hidden></input>
+        </label>
+    </div>
+    <table class="table table-bordered table-strip">
+    <thead>
+        <tr>
+            <th>Profesor</th>
+            <th>email</th>
+            <th>Usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profesor in profesores %}
+            <tr>
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input class="chkprofesores" id="{{ profesor.id|encode }}" name="{{ profesor.id|encode }}" type="checkbox" value="{{ profesor.id }}">
+                            <a href="{{ profesor.url }}">{{ profesor.nombre }}</a></input>
+                        </label>
+                    </div>
+                </td>
+                <td>{{ profesor.email }}</td>
+                <td>{{ profesor.usuario }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</form>   
+<script>
+    function mensajes()
+    {
+        $('#correo').prop('checked', true);
+        $('[name="formulario"]').submit();
+        return true;
+    }
+    function informes()
+    {
+        $('#correo').prop('checked', false);
+        $('[name="formulario"]').submit();
+        return true;
+    }
+    function actuChecks(clase)
+    {
+        $('.' + clase).prop('checked', !$('.' + clase).prop('checked'));
+    }
+</script>   
+{% endblock %}

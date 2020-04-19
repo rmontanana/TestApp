@@ -1,0 +1,12 @@
+{% extends 'plantillas/principal.twig' %}
+
+{% block content %}
+
+    <h1></h1>
+    <div class="jumbotron">
+        <h1 class="display-4">{{ articulo.titulo }}</h1>
+        <p class="lead">{{ articulo.descripcion }}</p>
+        <a class="btn btn-primary btn-lg" href="/articulos" role="button">Volver a la página anterior</a>
+    </div>
+
+{% endblock %}
