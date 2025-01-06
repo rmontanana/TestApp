@@ -1,5 +1,5 @@
 {
-   "name": "rmontanana/prueba_di_route",
+    "name": "rmontanana/prueba_di_route",
     "license": "MIT",
     "type": "project",
     "autoload": {
@@ -7,9 +7,9 @@
             "App\\": "app/"
         }
     },
-   "require": {
-      "php-di/php-di": "^6.1",
-      "nikic/fast-route": "^1.3",
-      "twig/twig": "^3.0"
-   }
+    "require": {
+        "php-di/php-di": "@stable",
+        "nikic/fast-route": "@stable",
+        "twig/twig": "@stable"
+    }
 }
